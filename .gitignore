@@ -1,0 +1,9 @@
+.idea/*
+.idea_modules/
+.DS_Store
+.AppleDouble
+.LSOverride
+*.class
+*.log
+.envrc
+target
