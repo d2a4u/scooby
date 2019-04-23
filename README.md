@@ -21,19 +21,22 @@ for {
   _ <- Customer.insert(customer2)
   result <- Customer.find[Customer.FindByAge, List](query)
 } yield result
-
 ```
 
 ### Using types
 
 ```scala
 for {
-  _ <- createTable
   _ <- Insert[Customer](customer1, Customer.insert).run
   _ <- Insert[Customer](customer2, Customer.insert).run
   result <- Find[Customer.FindByAge, Customer, List](query, Customer.fba).run
 } yield result
 ```
+
+### TODO
+
+- Support multiple queries in 1 transaction
+- Support more CRUD ops
 
 ## License
 

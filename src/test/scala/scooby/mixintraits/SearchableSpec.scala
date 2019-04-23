@@ -16,7 +16,7 @@ class SearchableSpec extends FlatSpec with Matchers {
 
   val xa = Transactor.fromDriverManager[IO](
     "org.h2.Driver",
-    "jdbc:h2:mem:SearchableSpec;DB_CLOSE_DELAY=-1",
+    "jdbc:h2:mem:;DB_CLOSE_DELAY=-1",
     "sa", ""
   )
 
