@@ -53,7 +53,7 @@ class SearchableSpec extends FlatSpec with Matchers {
       _ <- Customer.insert(customer2)
       result <- Customer.find[Customer.FindByAge, List](query)
     } yield result
-
+    val foo = tranx.transact(xa).unsafeRunSync()
     tranx.transact(xa).unsafeRunSync() shouldEqual expect
   }
 }

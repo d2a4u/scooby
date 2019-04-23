@@ -50,8 +50,8 @@ class QueryOpsSpec extends FlatSpec with Matchers {
 
     val tranx = for {
       _ <- createTable
-      _ <- Customer.insert(customer1)
-      _ <- Customer.insert(customer2)
+      _ <- Insert[Customer](customer1, Customer.insert).run
+      _ <- Insert[Customer](customer2, Customer.insert).run
       result <- Find[Customer.FindByAge, Customer, List](query, Customer.fba).run
     } yield result
 

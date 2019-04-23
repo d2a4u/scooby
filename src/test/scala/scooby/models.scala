@@ -24,7 +24,7 @@ object Customer extends Searchable[Customer] with Saveable[Customer] {
   case class FindById(id: Long)
   case class FindByAge(age: Int)
 
-  implicit val createCus = SqlBuilder[Customer, SqlInserted] { input =>
+  implicit val insert = SqlBuilder[Customer, SqlInserted] { input =>
     sql"""INSERT INTO customers (id, name, age, line1, line2, postcode)
          | VALUES (${input.id}, ${input.name}, ${input.age}, ${input.address.line1}, ${input.address.line2}, ${input.address.postcode})""".stripMargin
   }
