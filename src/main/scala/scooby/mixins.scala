@@ -8,7 +8,7 @@ import scooby.utils._
 
 import scala.collection.generic.CanBuildFrom
 
-object mixins extends QueryOps with UpdateOps {
+object mixins {
 
   trait Searchable[O] {
     def findOne[I](input: I)(implicit query: SqlBuilder[I, O], read: Read[O]): ConnectionIO[Option[O]] =

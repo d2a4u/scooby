@@ -4,13 +4,13 @@ import cats.effect.{ContextShift, IO}
 import doobie.implicits._
 import doobie.util.transactor.Transactor
 import org.scalatest.{FlatSpec, Matchers}
-import scooby.mixins._
+import scooby._
 import scooby.utils.SqlBuilder
 import scooby.{Address, Customer}
 
 import scala.concurrent.ExecutionContext
 
-class QueryOpsSpec extends FlatSpec with Matchers {
+class ReadOpsSpec extends FlatSpec with Matchers {
 
   implicit def contextShift: ContextShift[IO] =
     IO.contextShift(ExecutionContext.global)

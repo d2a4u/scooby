@@ -23,7 +23,7 @@ for {
 } yield result
 ```
 
-### Using types
+### Using type classes
 
 ```scala
 for {
